@@ -1,0 +1,10 @@
+--- # conditional playbook
+- hosts: demo
+  become: true
+  tasks: 
+    - name: install apache2 for ubuntu
+      command: apt-get -y install apache2
+      when: ansible_os_family == "ubuntu"
+    - name: install apache for redhat
+      command: yum -y install httpd
+      when: ansible_os_family == "RedHat"

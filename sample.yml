@@ -1,0 +1,14 @@
+# this is my first sample playbook
+--- 
+- hosts: demo
+  become: true
+  vars_prompt: 
+    - name: vmtutes
+      prompt: please enter package name
+  tasks:
+    - name: package"{{ vmtutes }}" installation
+      yum: pkg="{{ vmtutes }}" state=present
+      notify: service started
+  handlers:
+    - name: service started 
+      service: name="{{ vmtutes }}" state=started

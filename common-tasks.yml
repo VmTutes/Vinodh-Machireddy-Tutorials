@@ -1,0 +1,2 @@
+- name: pkg installtion
+  action: yum pkg=ftp state=present 
