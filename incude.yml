@@ -1,5 +1,0 @@
----
-- hosts: demo
-  become: true
-  tasks:
-   - include: common-tasks.yml
